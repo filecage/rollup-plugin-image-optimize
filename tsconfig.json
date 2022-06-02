@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "allowJs": true,
+        "allowSyntheticDefaultImports": true,
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "moduleResolution": "node",
+        "removeComments": true,
+        "sourceMap": true,
+        "strict": true,
+        "baseUrl": ".",
+        "resolveJsonModule": true,
+        "lib": [
+            "esnext"
+        ],
+        "typeRoots": [
+            "./src/types",
+            "./node_modules/@types",
+        ],
+        "types": [
+            "node",
+            "jest"
+        ],
+    },
+    "include": [
+        "src/**/*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "dist"
+    ]
+}
