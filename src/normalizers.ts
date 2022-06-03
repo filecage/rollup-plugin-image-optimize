@@ -27,6 +27,21 @@ export function normalizeFormatByPath (filePath: string) : Format | null {
     return null;
 }
 
+/**
+ * Takes the imported `filePath` and transforms it to a target `filePath` with a new extension
+ * Used when emitting assets
+ *
+ * @param {string} filePath
+ * @param {Format} targetFormat
+ * @return {string}
+ */
+export function normalizeTargetFilePath (filePath: string, targetFormat: Format) : string {
+    const basename = path.basename(filePath, path.extname(filePath));
+
+    return `${path.join(path.dirname(filePath), basename)}.${targetFormat}`;
+}
+
+
 // When normalizing, we remove null values and also turn everything into an array
 // that can be mixed instead
 export type NormalizedPluginOptions = {
