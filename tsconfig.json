@@ -6,7 +6,7 @@
         "noImplicitAny": true,
         "moduleResolution": "node",
         "removeComments": true,
-        "sourceMap": true,
+        "sourceMap": false,
         "strict": true,
         "baseUrl": ".",
         "resolveJsonModule": true,
@@ -26,6 +26,7 @@
         "src/**/*.ts"
     ],
     "exclude": [
+        "src/**/*.test.ts",
         "node_modules",
         "dist"
     ]
