@@ -18,11 +18,15 @@ describe('Format by Path Normalization', () => {
 
 describe('Target filePath normalization', () => {
     const data = [
-        {filePath: '/foo/bar/baz.jpg', targetFormat: Format.PNG, expectedFilePath: '/foo/bar/baz.png'},
-        {filePath: '/foo/bar/baz.PNG', targetFormat: Format.WEBP, expectedFilePath: '/foo/bar/baz.webp'},
         {filePath: 'bingo.webp', targetFormat: Format.JPG, expectedFilePath: 'bingo.jpg'},
         {filePath: 'foobar', targetFormat: Format.PNG, expectedFilePath: 'foobar.png'},
         {filePath: 'ends-withjpg', targetFormat: Format.PNG, expectedFilePath: 'ends-withjpg.png'},
+
+        // These values will be flattened; see the related comment in normalizers.ts
+        {filePath: '/foo/bar/baz.jpg', targetFormat: Format.PNG, expectedFilePath: 'baz.png'},
+        {filePath: 'foo/bar/baz.jpg', targetFormat: Format.PNG, expectedFilePath: 'baz.png'},
+        {filePath: '/foo/bar/baz.PNG', targetFormat: Format.WEBP, expectedFilePath: 'baz.webp'},
+        {filePath: 'foo/bar/baz.PNG', targetFormat: Format.WEBP, expectedFilePath: 'baz.webp'},
     ];
 
     it.each(data)('Normalizes basename with target extension', ({filePath, targetFormat, expectedFilePath}) => {

@@ -38,7 +38,11 @@ export function normalizeFormatByPath (filePath: string) : Format | null {
 export function normalizeTargetFilePath (filePath: string, targetFormat: Format) : string {
     const basename = path.basename(filePath, path.extname(filePath));
 
-    return `${path.join(path.dirname(filePath), basename)}.${targetFormat}`;
+    // TODO: From what I know, it is not possible to keep a directory structure throughout the build
+    //       as we do not know an asset base path that we could use to intersect the relative directory
+    //       structure. A workaround might be a config option, but for now we'll just flatten the structure
+    //       when normalizing. Maybe there also is (or will be) a better solution with rollup.
+    return `${basename}.${targetFormat}`;
 }
 
 
