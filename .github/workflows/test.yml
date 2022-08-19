@@ -1,0 +1,15 @@
+name: Tests
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install modules
+        run: npm ci
+
+      - name: Types
+        run: tsc --noEmit
+
+      - name: Tests
+        run: npm test
