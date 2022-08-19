@@ -1,6 +1,6 @@
 {
-    "name": "@filecage/rollup-plugin-image-optimize",
-    "version": "1.0.0",
+    "name": "@filecage/rollup-plugin-image-import-optimize",
+    "version": "0.1.0",
     "description": "",
     "main": "./dist/index.cjs",
     "module": "./dist/index.js",
@@ -23,12 +23,19 @@
         "type": "git",
         "url": "git+https://github.com/filecage/rollup-plugin-image-optimize.git"
     },
-    "author": "",
+    "author": "David Beuchert",
     "license": "MIT",
     "bugs": {
         "url": "https://github.com/filecage/rollup-plugin-image-optimize/issues"
     },
     "homepage": "https://github.com/filecage/rollup-plugin-image-optimize#readme",
+    "files": [
+        "dist",
+        "package.json",
+        "LICENSE",
+        "README",
+        "CHANGELOG"
+    ],
     "peerDependencies": {
         "rollup": "^2.0.0"
     },

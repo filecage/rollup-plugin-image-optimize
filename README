@@ -1,0 +1,15 @@
+# Rollup Plugin Image Import Optimize
+This is a [rollup](https://github.com/rollup/rollup) plugin to support importing of images, similar to
+what [@rollup/plugin-image](https://github.com/rollup/plugins/tree/master/packages/image) does.
+
+However, this plugin does not import the image into your bundle. Instead, your image is emitted as asset and
+your import is an object containing URLs to your image in different file formats:
+```js
+import {webp, png} from './picture.svg';
+
+document.write(`<img src="${webp}" />`);
+document.write(`<img src="${png}" />`);
+```
+
+Optimization of images can be configured. The plugin uses [sharp](https://github.com/lovell/sharp) internally
+to process images.
