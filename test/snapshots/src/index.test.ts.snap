@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rollup plugin integration with rollup should emit assets by default config 1`] = `
+"const __asset = {};
+Object.defineProperty(__asset, 'png', {get: () => {throw new Error('rollup-plugin-image-optimize: Asset format png has not been exported. Check your target formats.')}});
+Object.defineProperty(__asset, 'jpg', {value: 'assets/asset-c7958daa.jpg'});
+Object.defineProperty(__asset, 'webp', {value: 'assets/asset-767b25dd.webp'});
+
+console.log(__asset.png);
+console.log(__asset.jpg);
+console.log(__asset.webp);
+"
+`;
